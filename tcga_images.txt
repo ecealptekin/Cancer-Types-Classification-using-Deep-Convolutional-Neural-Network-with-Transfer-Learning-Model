@@ -1,0 +1,48 @@
+
+# hasta bilgilerini almak için
+https://api.gdc.cancer.gov/files?filters={"op":"and","content":[{"op":"=","content":{"field":"files.data_format","value":["BCR XML"]}},{"op":"=","content":{"field":"cases.project.project_id","value":["TCGA-BRCA"]}},{"op":"=","content":{"field":"data_type","value":["Clinical Supplement"]}}]}&fields=file_id,associated_entities.entity_submitter_id&pretty=TRUE&from=0&size=99999
+
+# resimleri almak için
+https://api.gdc.cancer.gov/files?filters={"op":"and","content":[{"op":"=","content":{"field":"files.data_format","value":["SVS"]}},{"op":"=","content":{"field":"cases.project.project_id","value":["TCGA-BRCA"]}},{"op":"=","content":{"field":"data_type","value":["Slide Image"]}}]}&fields=file_id,associated_entities.entity_submitter_id&pretty=TRUE&from=0&size=99999
+
+https://api.gdc.cancer.gov/files?filters={"op":"and","content":[{"op":"=","content":{"field":"files.data_format","value":["SVS"]}},{"op":"=","content":{"field":"cases.project.project_id","value":["TCGA-COAD"]}},{"op":"=","content":{"field":"data_type","value":["Slide Image"]}}]}&fields=file_id,associated_entities.entity_submitter_id&pretty=TRUE&from=0&size=99999
+
+
+
+file_id = "fc7d6cca-6541-4e9a-8830-fee7f8bc0c7b"
+"https://api.gdc.cancer.gov/data/{}".format(file_id)
+
+
+
+{
+  "id": "5bd2d920-fb46-45b2-9995-bd383330c8f6", 
+  "associated_entities": [
+    {
+      "entity_submitter_id": "TCGA-C8-A27A-01Z-00-DX1"
+    }
+  ], 
+  "file_id": "5bd2d920-fb46-45b2-9995-bd383330c8f6"
+},
+
+# bu resmi indirir
+https://api.gdc.cancer.gov/data/5bd2d920-fb46-45b2-9995-bd383330c8f6
+
+
+{
+  "id": "e56e31f3-9d6c-4baa-b5d1-048ae7bed2eb", 
+  "associated_entities": [
+    {
+      "entity_submitter_id": "TCGA-C8-A27A"
+    }
+  ], 
+  "file_id": "e56e31f3-9d6c-4baa-b5d1-048ae7bed2eb"
+},
+
+# bu klinik veriyi indirir
+https://api.gdc.cancer.gov/data/e56e31f3-9d6c-4baa-b5d1-048ae7bed2eb
+
+#XML dosyasının içinde histological_type preferred_name=
+
+
+#SVS to TIFF
+https://gist.github.com/PingjunChen/677ee3d3f255219ccd8e5ea5f3983212
